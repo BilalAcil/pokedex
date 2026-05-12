@@ -9,9 +9,9 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  max-width: 1540px;
   font-family: "Roboto", serif;
   background-image: linear-gradient(to right, transparent, rgb(255, 205, 13), rgb(255, 205, 13), rgb(255, 205, 13), transparent);
+  background-color: rgb(24 124 217 / 82%);
 }
 
 main {
