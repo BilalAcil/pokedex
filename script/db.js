@@ -276,7 +276,7 @@ let pokemons = [
     Hp: 75,
     Attack: "Schaufler",
     Defense: 60,
-    Image: "https://www.pokewiki.de/images/thumb/1/17/Hauptartwork_028.png/252px-Hauptartwork_028.png",
+    Image: "https://www.pokewiki.de/images/thumb/1/17/Hauptartwork_028.png/251px-Hauptartwork_028.png",
     Alt: "Sandamer"
   },
   {

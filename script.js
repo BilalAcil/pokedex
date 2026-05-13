@@ -26,6 +26,11 @@ function renderMainContent() {
 }
 
 
+function handleArrowKeys(event) {
+  if (event.key === 'ArrowRight') slideForward();
+  if (event.key === 'ArrowLeft') slideBackward();
+}
+
 function renderFullScreen(i) {
   currentIndex = i;
   let content = document.getElementById('full-screen');
@@ -33,6 +38,7 @@ function renderFullScreen(i) {
   content.innerHTML += fullScreenContent(i);
   toggleOverflowHidden();
   fullScreenVisible();
+  document.addEventListener('keydown', handleArrowKeys);
 }
 
 
@@ -48,6 +54,7 @@ function closeFullScreen() {
   element.classList.replace('fullscreen-overlay', 'd-none');
   toggleOverflowHidden();
   updateCurrentIndex();
+  document.removeEventListener('keydown', handleArrowKeys);
 }
 
 

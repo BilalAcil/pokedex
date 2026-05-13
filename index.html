@@ -42,13 +42,15 @@
       </div>
       <nav class="navbar bg-body-tertiary">
         <div class="container-fluid">
-          <div class="logo" id="logo" onclick="reloadPage()"><img src="./img/Pokedex-Logo.png"></div>
-          <div class="d-flex" style="height: 32px;" role="search">
-            <input class="form-control me-2" type="search" placeholder="Suche deinen Pokémon" aria-label="Search"
-              id="myInput">
-            <button class="btn btn-outline-success" id="myButton" onclick="searchPokemon()">
-              L<img id="search" class="search-button" src="./Style/pokeball.svg">S
-            </button>
+          <div class="navbar-header">
+            <div class="logo" id="logo" onclick="reloadPage()"><img src="./img/Pokedex-Logo.png"></div>
+            <div class="d-flex" style="height: 32px;" role="search">
+              <input class="form-control me-2" type="search" placeholder="Suche deinen Pokémon" aria-label="Search"
+                id="myInput" onkeydown="if(event.key==='Enter'){ searchPokemon(); this.value=''; }">
+              <button class="btn btn-outline-success" id="myButton" onclick="searchPokemon()">
+                L<img id="search" class="search-button" src="./Style/pokeball.svg">S
+              </button>
+            </div>
           </div>
         </div>
       </nav>
