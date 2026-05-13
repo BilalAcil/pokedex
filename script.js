@@ -15,7 +15,7 @@ function render() {
 
 function renderMainContent() {
   setTimeout(() => {
-    let content = document.getElementById('content');
+    let content = document.getElementById('main-container');
     for (let i = currentIndex; i < currentIndex + 30 && i < pokemons.length; i++) {
       visiblePokemons.push(pokemons[i]);
       content.innerHTML += mainContent(i);
@@ -122,7 +122,7 @@ function updateImage() {
 function searchPokemon() {
   const input = getInputValue();
   if (!isValidInput(input)) return;
-  const content = document.getElementById('content');
+  const content = document.getElementById('main-container');
   content.innerHTML = '';
   visiblePokemons = [];
   originalPokemons = [];

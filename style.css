@@ -8,20 +8,25 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   font-family: "Roboto", serif;
   background-image: linear-gradient(to right, transparent, rgb(255, 205, 13), rgb(255, 205, 13), rgb(255, 205, 13), transparent);
   background-color: rgb(24 124 217 / 82%);
 }
 
 main {
-  padding: 0 8px;
-  gap: 8px;
   margin-top: 88px;
   margin-bottom: 16px;
   display: flex;
   justify-content: center;
+}
+
+.main-container {
+  width: 100%;
+  max-width: 1440px;
+  display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  gap: 11px;
 }
 
 .card {
@@ -268,13 +273,21 @@ footer p:hover {
   height: 200px;
 }
 
-.next-button {
+.footer-container {
+  display: flex;
+  justify-content: center;
   width: calc(100vw - var(--scrollbar-width));
-  height: 5vh;
+}
+
+.next-button {
+  width: 100%;
+  max-width: 1440px;
+  height: 60px;
   background-image: linear-gradient(to right, transparent 20%, rgb(94, 140, 183) 30%, rgb(94, 140, 183) 70%, transparent 80%);
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 20px 0;
 }
 
 .next-button p {
@@ -332,13 +345,31 @@ footer p:hover {
 }
 
 @keyframes logo-bounce {
-  0%   { transform: translateY(-100vh); }
-  60%  { transform: translateY(30px); }
-  80%  { transform: translateY(-15px); }
-  100% { transform: translateY(0); }
+  0% {
+    transform: translateY(-100vh);
+  }
+
+  60% {
+    transform: translateY(30px);
+  }
+
+  80% {
+    transform: translateY(-15px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }
 
 @keyframes container-fadeout {
-  0%, 60% { opacity: 1; }
-  100%     { opacity: 0; }
+
+  0%,
+  60% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
