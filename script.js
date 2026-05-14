@@ -3,11 +3,6 @@ let visiblePokemons = [];
 let originalPokemons = [];
 
 
-function load() {
-  location.reload();
-}
-
-
 function render() {
   renderMainContent();
 }
@@ -192,11 +187,23 @@ function invisableBackButton() {
 
 
 function reloadPage() {
-  let input = document.getElementById('myInput');
-  input.value = '';
-  load();
+  document.getElementById('myInput').value = '';
+  currentIndex = 0;
+  visiblePokemons = [];
+  originalPokemons = [];
+
+  const content = document.getElementById('main-container');
+  content.innerHTML = '';
+  for (let i = 0; i < 30 && i < pokemons.length; i++) {
+    visiblePokemons.push(pokemons[i]);
+    content.innerHTML += mainContent(i);
+  }
+
   invisableBackButton();
   invisableNoPokemon();
+
+  document.getElementById('load-more').classList.remove('d-none');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 
