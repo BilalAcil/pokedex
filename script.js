@@ -14,15 +14,22 @@ function render() {
 
 
 function renderMainContent() {
-  setTimeout(() => {
-    let content = document.getElementById('main-container');
-    for (let i = currentIndex; i < currentIndex + 30 && i < pokemons.length; i++) {
-      visiblePokemons.push(pokemons[i]);
-      content.innerHTML += mainContent(i);
-    }
-    toggleLoadingScreen();
+  let content = document.getElementById('main-container');
+  for (let i = currentIndex; i < currentIndex + 30 && i < pokemons.length; i++) {
+    visiblePokemons.push(pokemons[i]);
+    content.innerHTML += mainContent(i);
+  }
+  toggleLoadingScreen();
+
+  const logoContainer = document.getElementById('logo-container');
+  logoContainer.addEventListener('animationend', () => {
     toggleLogoVisibility(false);
-  }, 2500);
+    document.getElementById('main-container').classList.add('main-visible');
+    document.querySelector('header').classList.add('main-visible');
+    const loadMore = document.getElementById('load-more');
+    loadMore.classList.remove('d-none');
+    loadMore.classList.add('main-visible');
+  }, { once: true });
 }
 
 
